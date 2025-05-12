@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yhteystiedot - Vakuutusmaisteri.fi</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f0f2f5;
+            color: #2E2E2E;
+            line-height: 1.6;
+            font-size: 16px;
+        }
+        header {
+            background-color: #002a3a;
+            color: white;
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .header-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            position: relative;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            flex-shrink: 0;
+        }
+        .logo img {
+            height: 35px;
+            margin-right: 0.5rem;
+        }
+        .logoteksti {
+            font-size: 1.1rem;
+            color: white;
+            font-weight: bold;
+        }
+        .hamburger-menu {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            width: 30px;
+            height: 25px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+            z-index: 11;
+        }
+        .hamburger-menu span {
+            width: 100%;
+            height: 3px;
+            background-color: white;
+            border-radius: 2px;
+            transition: all 0.3s linear;
+        }
+        header.nav-active .hamburger-menu span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+        header.nav-active .hamburger-menu span:nth-child(2) {
+            opacity: 0;
+        }
+        header.nav-active .hamburger-menu span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+        .nav-links {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            background-color: #002a3a;
+            padding: 1rem 0;
+            box-shadow: 0 4px 5px rgba(0,0,0,0.1);
+            z-index: 10;
+        }
+        .nav-links.active {
+            display: flex;
+        }
+        .nav-links a {
+            color: white;
+            margin: 0.8rem 0.5rem;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: color 0.3s ease;
+        }
+        .nav-links a:hover {
+            color: #FFD700;
+        }
+        .container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 1rem;
+        }
+        h2 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #002a3a;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            background-color: #ffffff;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+        label {
+            margin-top: 0.5rem;
+            font-weight: bold;
+            color: #2E2E2E;
+        }
+        input, textarea {
+            padding: 0.8rem;
+            margin-top: 0.5rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-family: 'Roboto', sans-serif;
+            font-size: 1rem;
+        }
+        textarea {
+            resize: vertical;
+        }
+        button {
+            background-color: #FFD700;
+            color: #002a3a;
+            padding: 0.8rem 1.5rem;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            border: none;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            margin-top: 1rem;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+        button:hover {
+            background-color: #e0bd00;
+            transform: translateY(-2px);
+        }
+        footer {
+            background-color: #002a3a;
+            color: white;
+            text-align: center;
+            padding: 1.5rem 1rem;
+            margin-top: 1rem;
+        }
+        footer p {
+            margin: 0;
+            font-size: 0.8rem;
+        }
+        footer a {
+  color: #f8f9fa; 
+  text-decoration: none;
+  margin: 0 0.3rem;
+}
+        footer a:hover {
+            color: white;
+            text-decoration: underline;
+        }
+        @media (min-width: 768px) {
+            header {
+                padding: 1rem 2rem;
+            }
+            .hamburger-menu {
+                display: none;
+            }
+            .nav-links {
+                display: flex;
+                flex-direction: row;
+                position: static;
+                width: auto;
+                background-color: transparent;
+                padding: 0;
+                box-shadow: none;
+                align-items: center;
+            }
+            .nav-links a {
+                margin: 0 1rem;
+                font-size: 1rem;
+                border-bottom: 2px solid transparent;
+                padding-bottom: 5px;
+                transition: color 0.3s ease, border-bottom 0.3s ease;
+            }
+            .nav-links a:hover {
+                color: #FFD700;
+                border-bottom: 2px solid #FFD700;
+            }
+            .logo img {
+                height: 40px;
+                margin-right: 1rem;
+            }
+            .logoteksti {
+                font-size: 1.2rem;
+            }
+            form {
+                padding: 2rem;
+            }
+            h2 {
+                font-size: 2.2rem;
+            }
+            button {
+                padding: 1rem 2rem;
+                font-size: 1rem;
+            }
+        }
+        @media (min-width: 1024px) {
+            body {
+                font-size: 18px;
+            }
+            .container {
+                padding: 2rem;
+            }
+            h2 {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <span class="logoteksti">Vakuutusmaisteri.fi</span>
+            </div>
+            <button class="hamburger-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="nav-links">
+                <a href="index.html">Etusivu</a>
+                <a href="kilpailutus.html">Kilpailutus</a>
+                <a href="yhteystiedot.html">Yhteystiedot</a>
+            </nav>
+        </div>
+    </header>
+    <div class="container">
+        <h2>Ota yhteyttä</h2>
+        <form>
+            <label for="nimi">Nimi:</label>
+            <input type="text" id="nimi" name="nimi" required>
+            
+            <label for="sahkoposti">Sähköposti:</label>
+            <input type="email" id="sahkoposti" name="sahkoposti" required>
+            
+            <label for="viesti">Viesti:</label>
+            <textarea id="viesti" name="viesti" rows="5" required></textarea>
+            
+            <button type="submit">Lähetä</button>
+        </form>
+    </div>
+    <footer>
+        <p>© 2025 Vakuutusmaisteri.fi<a href="https://tietosuoja.fi/tietosuoja">Tietosuojaseloste</a></p>|<a href="Media/Vakuutusmaisteri.fi - Käyttöehdot.pdf">Käyttöehdot</a></p>
+    </footer>
+    <script>
+        const hamburger = document.querySelector('.hamburger-menu');
+        const navLinks = document.querySelector('.nav-links');
+        const header = document.querySelector('header');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            header.classList.toggle('nav-active');
+        });
+    </script>
+</body>
+</html>

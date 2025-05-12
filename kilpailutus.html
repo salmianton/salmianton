@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Vakuutusmaisteri.fi - Kilpailutus</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <div class="header-container">
+      <div class="logo">
+        <strong>Vakuutusmaisteri.fi</strong>
+      </div>
+      <button class="hamburger-menu" aria-label="Avaa valikko" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav class="main-nav">
+        <div class="nav-links">
+          <a href="index.html">Etusivu</a>
+          <a href="kilpailutus.html" class="active">Kilpailutus</a>
+          <a href="yhteystiedot.html">Yhteystiedot</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero kilpailutus-hero">
+    <img src="Media/kuva1.jpg" alt="Vakuutusmaisteri hero image" class="hero-image" />
+    <div class="hero-content">
+      <h1>Kilpailuta vakuutuksesi tästä</h1>
+      <p>Täytä lomake muutamassa minuutissa</p>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSc_yfu88DV6xokZZOC2gCMrFtmJrtARBzzTgsVPAY_6kbxLeg/viewform?usp=dialog" target="_blank" class="cta-button">Aloita kilpailutus</a>
+    </div>
+  </section>
+  <section class="faq-section">
+    <h2>Usein kysytyt kysymykset</h2>
+    <ul>
+        <li>
+            <strong>Mitä tietoja tarvitaan?</strong>
+            Tarvitset perustiedot vakuutustarpeistasi, kuten vakuutustyypin (esim. koti-, auto-, matkavakuutus), vakuutettavan kohteen tiedot ja yhteystietosi tarjousten lähettämistä varten.
+        </li>
+        <li>
+            <strong>Kuinka nopeasti saan tarjoukset?</strong>
+            Saat tarjoukset yleensä 1–3 arkipäivän kuluessa lomakkeen lähettämisestä, riippuen vakuutusyhtiöiden vastausajoista.
+        </li>
+    </ul>
+</section>
+  <footer>
+    <p>© Vakuutusmaisteri.fi | <a href="https://tietosuoja.fi/tietosuoja">Tietosuojaseloste</a> | <a href="Media/Vakuutusmaisteri.fi - Käyttöehdot.pdf">Käyttöehdot</a></p>
+  </footer>
+
+  <script>
+    const hamburger = document.querySelector('.hamburger-menu');
+    const navLinks = document.querySelector('.nav-links');
+    const header = document.querySelector('header');
+
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+      header.classList.toggle('nav-active');
+      const expanded = hamburger.getAttribute('aria-expanded') === 'true' || false;
+      hamburger.setAttribute('aria-expanded', !expanded);
+    });
+  </script>
+</body>
+</html>

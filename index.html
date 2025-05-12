@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Vakuutusmaisteri.fi</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+
+  <header>
+    <div class="header-container">
+      <div class="logo">
+        <strong>Vakuutusmaisteri.fi</strong>
+      </div>
+
+      <button class="hamburger-menu" aria-label="Avaa valikko" aria-expanded="false">
+        <span></span> <span></span>
+        <span></span>
+      </button>
+
+      <nav class="main-nav">
+        <div class="nav-links"> <a href="index.html">Etusivu</a>
+          <a href="kilpailutus.html">Kilpailutus</a>
+          <a href="yhteystiedot.html">Yhteystiedot</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <video autoplay muted loop playsinline>
+      <source src="Media/handsake.mp4.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+    <div class="hero-content">
+      <h1>Kilpailuta vakuutuksesi – Säästä aikaa ja rahaa!</h1>
+      <p>Jätä vain yksi lomake – me hoidamme loput puolestasi.</p>
+      <a href="kilpailutus.html" class="cta-button">Aloita kilpailutus</a>
+    </div>
+  </section>
+
+  <section class="steps">
+    <div class="step">
+      <img src="Media/icon-form.svg" alt="Lomake-kuvake" />
+      <h2>1. Täytä lomake</h2>
+      <p>Syötä perustiedot vakuutustarpeestasi helposti ja nopeasti.</p>
+    </div>
+    <div class="step">
+      <img src="Media/icon-process.svg" alt="Kilpailutus-kuvake" />
+      <h2>2. Me kilpailutamme</h2>
+      <p>Välitämme tietosi vakuutusyhtiöille – täysin automaattisesti.</p>
+    </div>
+    <div class="step">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6" width="64" height="64" style="margin-bottom: 1rem;">
+        <path fill-rule="evenodd" d="M12.516 2.17a.75.75 0 0 0-1.032 0 11.209 11.209 0 0 1-7.877 3.08.75.75 0 0 0-.722.515A12.74 12.74 0 0 0 2.25 9.75c0 5.942 4.064 10.933 9.563 12.348a.749.749 0 0 0 .374 0c5.499-1.415 9.563-6.406 9.563-12.348 0-1.39-.223-2.73-.635-3.985a.75.75 0 0 0-.722-.516l-.143.001c-2.996 0-5.717-1.17-7.734-3.08Zm3.094 8.016a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z" clip-rule="evenodd" />
+      </svg>
+      <h2>3. Saat tarjoukset</h2>
+      <p>Valitse paras vaihtoehto helposti ja säästä rahaa.</p>
+    </div>
+  </section>
+
+ 
+  <script>
+    const hamburger = document.querySelector('.hamburger-menu');
+    const navLinks = document.querySelector('.nav-links');
+    const header = document.querySelector('header');
+
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+      header.classList.toggle('nav-active');
+      const expanded = hamburger.getAttribute('aria-expanded') === 'true' || false;
+      hamburger.setAttribute('aria-expanded', !expanded);
+    });
+  </script>
+  <footer>
+    <p>©Vakuutusmaisteri.fi | <a href="https://tietosuoja.fi/tietosuoja">Tietosuojaseloste</a> |<a href="Media/Vakuutusmaisteri.fi - Käyttöehdot.pdf">Käyttöehdot</a></p> 
+      <a href=".faq-section {
+      background-color: #ffffff;
+      padding: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      margin: 2rem auto;
+      max-width: 800px;
+  }
+  
+  .faq-section h2 {
+      font-family: 'Roboto', sans-serif;
+      font-weight: 700;
+      font-size: 1.5rem;
+      color: #002a3a;
+      text-align: center;
+      margin-bottom: 1.5rem;
+  }
+  
+  .faq-section ul {
+      list-style: none;
+      padding: 0;
+  }
+  
+  .faq-section li {
+      margin-bottom: 1.5rem;
+      padding: 0.5rem;
+      border-left: 4px solid #FFD700;
+      background-color: #f8f9fa;
+      border-radius: 5px;
+  }
+  
+  .faq-section li strong {
+      font-family: 'Roboto', sans-serif;
+      font-weight: 700;
+      color: #2E2E2E;
+      display: block;
+      margin-bottom: 0.5rem;
+  }
+  
+  .faq-section li p {
+      font-family: 'Roboto', sans-serif;
+      font-size: 1rem;
+      color: #212529;
+      line-height: 1.6;
+  }
+  
+  @media (min-width: 768px) {
+      .faq-section {
+          padding: 2rem;
+      }
+      .faq-section h2 {
+          font-size: 1.8rem;
+      }
+      .faq-section li {
+          padding: 1rem;
+      }
+  }
+  
+  @media (min-width: 1024px) {
+      .faq-section h2 {
+          font-size: 2rem;
+      }
+      .faq-section li {
+          padding: 1.2rem;
+      }
+  }</a></p>
+  </footer>
+
+</body>
+</html>
